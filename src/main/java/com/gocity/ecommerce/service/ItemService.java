@@ -25,5 +25,26 @@ public interface ItemService {
 	 */
 	public ItemResponseDto addItem(ItemRequestDto request) throws GenericBusinessException;
 
+	/**
+	 * Service method to find all products
+	 * 
+	 * @param pageable
+	 * @return
+	 */
 	public Page<ItemResponseDto> findAllProducts(Pageable pageable);
+
+	/**
+	 * Service method to delete a product
+	 */
+
+	public void deleteProduct(String itemId);
+
+	/**
+	 * Service method to update an @Item
+	 * 
+	 * @param request
+	 * @return
+	 */
+	public ItemResponseDto update(String id, ItemRequestDto request) throws GenericBusinessException;
+
 }

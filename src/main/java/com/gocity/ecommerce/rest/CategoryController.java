@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ import com.gocity.ecommerce.service.CategoryService;
  * @author Tanveer Bulsari
  *
  */
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api/category")
 public class CategoryController {
@@ -54,7 +56,6 @@ public class CategoryController {
 	 * @throws Exception
 	 */
 	@GetMapping("/findAll")
-	@ResponseStatus(HttpStatus.CREATED)
 	public ApiResponse<CategoryResponseDto> findAll() throws Exception {
 		LOGGER.info("REST service for getting all categories list called");
 		return new ApiResponse<CategoryResponseDto>(categoryService.getAllCategories(), HttpStatus.OK.value(),
