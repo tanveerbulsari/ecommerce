@@ -76,7 +76,7 @@ public class ItemController {
 	@DeleteMapping("/delete")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@RequestParam String itemId) {
-		LOGGER.info("REST service for fetching all products called");
+		LOGGER.info("REST service for deleting product called");
 		itemService.deleteProduct(itemId);
 	}
 
